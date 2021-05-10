@@ -286,6 +286,7 @@ public class SpringApplication {
 		setInitializers((Collection) getSpringFactoriesInstances(ApplicationContextInitializer.class));
 		// 配置应用程序启动前的初始化对象
 		setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));
+		//推断main启动类
 		this.mainApplicationClass = deduceMainApplicationClass();
 	}
 
