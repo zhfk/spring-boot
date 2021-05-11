@@ -332,7 +332,7 @@ public class SpringApplication {
 		listeners.starting(bootstrapContext, this.mainApplicationClass);
 		try {
 			ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);
-			// 创建应用程序环境 配置文件在此处读取(application.properties application.yml)
+			// 创建应用程序环境 配置文件在此处读取(application.properties/application.yml)
 			ConfigurableEnvironment environment = prepareEnvironment(listeners, bootstrapContext, applicationArguments);
 			configureIgnoreBeanInfo(environment);
 			Banner printedBanner = printBanner(environment);
