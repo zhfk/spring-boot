@@ -464,6 +464,7 @@ public class SpringApplication {
 	}
 
 	private <T> Collection<T> getSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, Object... args) {
+		// appClassLoader
 		ClassLoader classLoader = getClassLoader();
 		// Use names and ensure unique to protect against duplicates
 		Set<String> names = new LinkedHashSet<>(SpringFactoriesLoader.loadFactoryNames(type, classLoader));
@@ -496,9 +497,9 @@ public class SpringApplication {
 			return this.environment;
 		}
 		switch (this.webApplicationType) {
-		case SERVLET:
+		case SERVLET: // 默认spring boot使用SERVLET作为WebApplicatoinType
 			return new ApplicationServletEnvironment();
-		case REACTIVE:
+		case REACTIVE: // REACTIVE: 反应式web应用
 			return new ApplicationReactiveWebEnvironment();
 		default:
 			return new ApplicationEnvironment();
